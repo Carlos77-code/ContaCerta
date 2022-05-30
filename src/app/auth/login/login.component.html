@@ -1,0 +1,23 @@
+<h1>Login</h1>
+
+<div *ngIf="message" class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{ message }}
+  <a href="#" class="close" data-dismiss="alert" aria-label="close"> &times;</a>
+  <button type="button" class="close" data-dismiss="alert" aria-label="close" (click)="$event.preventDefault()">
+    <span airal-hidden="true"> &times;</span>
+  </button>
+</div>
+
+<h1>Login</h1>
+<div class="well">
+  <form #formLogin="ngForm">
+    <div class="form-group">
+      <label for="usuario">Usuário</label>
+      <input type="text" class="form-control" id="usuario" name="usuario"
+      [(ngModel)]="login.login" #usuario="ngModel" required>
+      <div *ngIf="usuario.errors && (usuario.dirty || usuario.t ouched">
+
+      </div>
+    </div>
+  </form>
+</div>
