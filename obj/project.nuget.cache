@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D5oKZfCk0D0NbKsgDgbJmEsbhkgWndodNHAkStbMLiPCmq69EvVluhJvg8mxH0UesX2pWnwUf5sNaxb+FoTtEg==",
+  "dgSpecHash": "n7elGf4eAo5+go3Ar+/fMDeNX0gap7JmI4UHpOJ8+srme/LJKvH+OxEsKfyevxJne7wB6eNxnQ2/DKkarFVkZA==",
   "success": true,
-  "projectFilePath": "D:\\carlo\\Cursos\\C#\\ContaCerta\\ContaCerta.csproj",
+  "projectFilePath": "D:\\carlo\\Github\\ContaCerta\\ContaCerta.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\carlo\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\carlo\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

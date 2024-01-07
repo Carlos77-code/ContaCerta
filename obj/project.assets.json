@@ -4022,11 +4022,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\carlo\\Cursos\\C#\\ContaCerta\\ContaCerta.csproj",
+      "projectUniqueName": "D:\\carlo\\Github\\ContaCerta\\ContaCerta.csproj",
       "projectName": "ContaCerta",
-      "projectPath": "D:\\carlo\\Cursos\\C#\\ContaCerta\\ContaCerta.csproj",
+      "projectPath": "D:\\carlo\\Github\\ContaCerta\\ContaCerta.csproj",
       "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-      "outputPath": "D:\\carlo\\Cursos\\C#\\ContaCerta\\obj\\",
+      "outputPath": "D:\\carlo\\Github\\ContaCerta\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
