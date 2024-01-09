@@ -64,6 +64,9 @@ namespace ContaCerta.Migrations
                     b.Property<double>("ValorTotalAPagar")
                         .HasColumnType("float");
 
+                    b.Property<double>("ValorTotalPago")
+                        .HasColumnType("float");
+
                     b.HasKey("Id");
 
                     b.ToTable("Despesas");

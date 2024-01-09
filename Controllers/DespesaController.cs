@@ -17,5 +17,22 @@ namespace ContaCerta.Controllers
             IEnumerable<DespesasModel> despesas = _db.Despesas;
             return View(despesas);
         }
+
+        public IActionResult Cadastrar() //Esse metodo retorna a view cadastrar
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Cadastrar(DespesasModel despesas)
+        {
+            if(ModelState.IsValid)
+            {
+                _db.Despesas.Add(despesas);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }

@@ -2,8 +2,8 @@
 
 <div class="container">
     <div class="d-flex justify-content-between align-items mb-5">
-        <h1>Despesas</h1>
-        <a class="btn btn-success mx-2">Cadastrar nova despesa</a>
+        <h1>Lista de despesas</h1>
+        <a class="btn btn-success mx-2" asp-controller="Despesa" asp-action="Cadastrar">Cadastrar nova despesa</a>
     </div>
 <table class="table table-dark table-hover">
     <thead>
@@ -17,6 +17,7 @@
             <th scope="col">Quantiade de Parcelas Faltantes</th>
             <th scope="col">Quantidade Total de Parcelas</th>
             <th scope="col">Valor Total A Pagar</th>
+            <th scope="col">Valor Total Pago</th>
             <th scope="col">Ultima Atualização</th>
             <th></th>
         </tr>
@@ -36,6 +37,7 @@
                     <td>@despesa.QuantiadeDeParcelasFaltantes</td>
                     <td>@despesa.QuantidadeTotalDeParcelas</td>
                     <td>@despesa.ValorTotalAPagar</td>
+                    <td>@despesa.ValorTotalPago</td>
                     <td>@despesa.DataUltimaAtualizacao</td>
                     <td>
                         <a sdp-controller="" asp-action="" class="">Editar</a>

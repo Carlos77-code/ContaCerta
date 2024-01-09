@@ -26,6 +26,7 @@ namespace ContaCerta.Migrations
                     QuantiadeDeParcelasFaltantes = table.Column<int>(type: "int", nullable: false),
                     QuantidadeTotalDeParcelas = table.Column<int>(type: "int", nullable: false),
                     ValorTotalAPagar = table.Column<double>(type: "float", nullable: false),
+                    ValorTotalPago = table.Column<double>(type: "float", nullable: false),
                     DataUltimaAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

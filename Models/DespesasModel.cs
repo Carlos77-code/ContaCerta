@@ -22,6 +22,8 @@
 
         public double ValorTotalAPagar { get; set; }
 
+        public double ValorTotalPago { get; set; }
+
         public DateTime DataUltimaAtualizacao { get; set; } = DateTime.Now;
     }
 }
