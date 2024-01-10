@@ -24,17 +24,20 @@
                     <option value="Saúde">Saúde</option>
                     <option value="Imposto">Imposto</option>
                 </select>
+                <span class="text-danger" asp-validation-for="Categoria"></span>
             </div>
 
 
             <div class="mb-3 col-md-6 mt-3">
                 <label for="Descricao" class="form-label">Descrição</label>
                 <input type="text" class="form-control" asp-for="Descricao" id="descricaoId" placeholder="Digite aqui">
+                <span class="text-danger" asp-validation-for="Descricao"></span>
             </div>
 
             <div class="mb-3 col-md-6">
                 <label for="ValorDaParcela" class="form-label">Valor da Parcela</label>
                 <input type="number" class="form-control" asp-for="ValorDaParcela" id="valorDaParcelaId" placeholder="Digite aqui">
+                <span class="text-danger" asp-validation-for="ValorDaParcela"></span>
             </div>
 
             <div class="mb-3 col-6">
@@ -46,17 +49,20 @@
                     <option value="Cartão/débito">Cartão/débito</option>
                     <option value="Boleto">Boleto</option>
                 </select>
+                <span class="text-danger" asp-validation-for="FormaDePagamento"></span>
             </div>
 
             <div class="mb-3 col-6">
                 <label for="QuantidadeDeParcelasPagas" class="form-label">Quantidade de parcelas pagas</label>
                 <input type="number" class="form-control" asp-for="QuantidadeParcelasPagas" id="quantidadeDeParcelasPagasId" placeholder="Digite aqui">
+                <span class="text-danger" asp-validation-for="QuantidadeParcelasPagas"></span>
             </div>
 
-            @* <div class="col-6">
+            <div class="col-6">
                 <label for="QuantidadeTotalDeParcelas" class="form-label">Quantidade total de parcelas</label>
-                <input type="number" class="form-control" asp-for="QuantidadeTotalDeParcelas" id="quantidadeTotalDeParcelasId" placeholder="Digite aqui" disabled>
-            </div> *@
+                <input type="number" class="form-control" asp-for="QuantidadeTotalDeParcelas" id="quantidadeTotalDeParcelasId" placeholder="Digite aqui">
+                <span class="text-danger" asp-validation-for="QuantidadeTotalDeParcelas"></span>
+            </div> 
 
             @* <div class="mb-3 col-6">
                 <label for="ValorTotalPago" class="form-label">Valor Total Pago</label>
@@ -71,7 +77,8 @@
                     <option value="Pago">Pago</option>
                     <option value="Falta pagar">Falta pagar</option>
                 </select>
-             </div>
+                <span class="text-danger" asp-validation-for="StatusDoMes"></span>
+            </div>
 
             <div class="d-flex gap-5">
                 <button type="submit" class="btn btn-success w-50">Adicionar</button>

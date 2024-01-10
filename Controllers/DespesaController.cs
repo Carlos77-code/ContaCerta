@@ -18,21 +18,27 @@ namespace ContaCerta.Controllers
             return View(despesas);
         }
 
+        [HttpGet]
         public IActionResult Cadastrar() //Esse metodo retorna a view cadastrar
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Cadastrar(DespesasModel despesas)
+        public IActionResult Cadastrar(DespesasModel despesas) //Esse metodo cadastra 
         {
             if(ModelState.IsValid)
             {
+                despesas.ValorTotalAPagar = despesas.ValorDaParcela * despesas.QuantidadeTotalDeParcelas;
+                despesas.QuantiadeDeParcelasFaltantes = despesas.QuantidadeTotalDeParcelas - despesas.QuantidadeParcelasPagas;
+                despesas.ValorTotalPago = despesas.ValorDaParcela * despesas.QuantidadeParcelasPagas;
+
                 _db.Despesas.Add(despesas);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View();
         }
+
     }
 }
