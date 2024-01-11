@@ -40,5 +40,40 @@ namespace ContaCerta.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Editar(int? id)
+        {
+            if(id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            DespesasModel despesa = _db.Despesas.FirstOrDefault(x => x.Id == id);
+
+            if(despesa == null)
+            {
+                return NotFound();
+            }
+            return View(despesa);
+        }
+
+        [HttpPost]
+        public IActionResult Editar(DespesasModel despesas)
+        {
+            despesas.ValorTotalAPagar = despesas.ValorDaParcela * despesas.QuantidadeTotalDeParcelas;
+            despesas.QuantiadeDeParcelasFaltantes = despesas.QuantidadeTotalDeParcelas - despesas.QuantidadeParcelasPagas;
+            despesas.ValorTotalPago = despesas.ValorDaParcela * despesas.QuantidadeParcelasPagas;
+
+            if (ModelState.IsValid)
+            {
+                _db.Despesas.Update(despesas);
+                _db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+
+            return View(despesas);
+        }
+
     }
 }

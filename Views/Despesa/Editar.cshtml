@@ -1,0 +1,87 @@
+﻿@model DespesasModel
+
+@{
+    ViewData["title"] = "Editar despesa";
+}
+
+
+<div class="container bg-light p-5 rounded-5">
+
+    <div class="mb-5 text-center">
+        <h1 class="text-light">Edição de despesa</h1>
+    </div>
+
+    <form method="post" asp-controller="Despesa" asp-action="Editar">
+
+        <input type="hidden" asp-for="Id"/>
+
+        <div class="row g-3">
+            <div class="col-6">
+                <label for="" class="form-label">Categoria</label>
+                <select class="form-select" asp-for="Categoria">
+                    <option value="-">-</option>
+                    <option value="Habitação">Habitação</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Educação">Educação</option>
+                    <option value="Saúde">Saúde</option>
+                    <option value="Imposto">Imposto</option>
+                </select>
+                <span class="text-danger" asp-validation-for="Categoria"></span>
+            </div>
+
+
+            <div class="mb-3 col-md-6 mt-3">
+                <label for="Descricao" class="form-label">Descrição</label>
+                <input type="text" class="form-control" asp-for="Descricao" id="descricaoId" placeholder="Digite aqui">
+                <span class="text-danger" asp-validation-for="Descricao"></span>
+            </div>
+
+            <div class="mb-3 col-md-6">
+                <label for="ValorDaParcela" class="form-label">Valor da Parcela</label>
+                <input type="number" class="form-control" asp-for="ValorDaParcela" id="valorDaParcelaId" placeholder="Digite aqui">
+                <span class="text-danger" asp-validation-for="ValorDaParcela"></span>
+            </div>
+
+            <div class="mb-3 col-6">
+                <label for="FormasDePagamento" class="form-label" id="formasDePagamentoId">Forma de pagamento</label>
+                <select class="form-select" asp-for="FormaDePagamento">
+                    <option value="-">-</option>
+                    <option value="Dinheiro/pix">Dinheiro/pix</option>
+                    <option value="Cartão/parcelado">Cartão/parcelado</option>
+                    <option value="Cartão/débito">Cartão/débito</option>
+                    <option value="Boleto">Boleto</option>
+                </select>
+                <span class="text-danger" asp-validation-for="FormaDePagamento"></span>
+            </div>
+
+            <div class="mb-3 col-6">
+                <label for="QuantidadeDeParcelasPagas" class="form-label">Quantidade de parcelas pagas</label>
+                <input type="number" class="form-control" asp-for="QuantidadeParcelasPagas" id="quantidadeDeParcelasPagasId" placeholder="Digite aqui">
+                <span class="text-danger" asp-validation-for="QuantidadeParcelasPagas"></span>
+            </div>
+
+            <div class="col-6">
+                <label for="QuantidadeTotalDeParcelas" class="form-label">Quantidade total de parcelas</label>
+                <input type="number" class="form-control" asp-for="QuantidadeTotalDeParcelas" id="quantidadeTotalDeParcelasId" placeholder="Digite aqui">
+                <span class="text-danger" asp-validation-for="QuantidadeTotalDeParcelas"></span>
+            </div>
+
+            <div class="mb-3 col-6">
+                <label class="form-check-label" for="StatusDoMes">Já está pago?</label>
+                <select class="form-select" asp-for="StatusDoMes" id="statusDoMesId">
+                    <option value="-">-</option>
+                    <option value="Pago">Pago</option>
+                    <option value="Falta pagar">Falta pagar</option>
+                </select>
+                <span class="text-danger" asp-validation-for="StatusDoMes"></span>
+            </div>
+
+            <div class="d-flex gap-5">
+                <button type="submit" class="btn btn-success w-50">Editar</button>
+
+                <button type="submit" class="btn btn-primary w-50" asp-controller="Despesa" asp-action="Index">Voltar</button>
+            </div>
+
+        </div>
+    </form>
+</div>
