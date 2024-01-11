@@ -75,5 +75,35 @@ namespace ContaCerta.Controllers
             return View(despesas);
         }
 
+        [HttpGet]
+        public IActionResult Excluir(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            DespesasModel despesa = _db.Despesas.FirstOrDefault(de => de.Id == id);
+
+            if (despesa == null)
+            {
+                return NotFound();
+            }
+            return View(despesa);
+        }
+
+        [HttpPost]
+        public IActionResult Excluir(DespesasModel despesas)
+        {
+            if(despesas == null)
+            {
+                return NotFound();
+            }
+
+            _db.Despesas.Remove(despesas);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
